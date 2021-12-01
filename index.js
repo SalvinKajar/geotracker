@@ -4,6 +4,7 @@ app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 app.use( express.static( "./views" ) );
 app.get("/",function(req,res){
+    console.log("double working");
     res.render("index");
 });
 
