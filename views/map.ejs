@@ -27,6 +27,7 @@ body { margin: 0; padding: 0; }
 
     map.on('load', () => {
         // Add an image to use as a custom marker
+        var pdata=<%- JSON.stringify(c) %>;
         map.loadImage(
             'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
             (error, image) => {
@@ -44,7 +45,7 @@ body { margin: 0; padding: 0; }
                                 'geometry': {
                                     'type': 'Point',
                                     'coordinates': [
-                                        -77.03238901390978, 38.913188059745586
+                                        c.lon, c.lat
                                     ]
                                 },
                                 'properties': {

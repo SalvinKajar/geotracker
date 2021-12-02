@@ -34,7 +34,7 @@ app.get("/",function(req,res){
 });
 app.get("/map",function(req,res){
     
-    
-    res.render("map");
+    var c={lat:19.0222,lon:72.8561};
+    res.render("map",c);
 });
 app.listen(process.env.PORT || 5000);
