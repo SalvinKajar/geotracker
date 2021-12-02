@@ -32,5 +32,9 @@ app.get("/",function(req,res){
     console.log("geo array:",geoarr);
     res.render("index");
 });
-
+app.get("/map",function(req,res){
+    
+    
+    res.render("map");
+});
 app.listen(process.env.PORT || 5000);
