@@ -1,7 +1,7 @@
 const express= require("express");
 const RequestIp = require('@supercharge/request-ip');
 const app= express()
-var geoip = require('geoip-lite');
+
  
 
  
@@ -12,6 +12,7 @@ app.set("view engine", "ejs");
 app.use( express.static( "./views" ) );
 
 app.get("/",function(req,res){
+    var geoip = require('geoip-lite');
     console.log("double working");
     var ip = RequestIp.getClientIp(req);
     
