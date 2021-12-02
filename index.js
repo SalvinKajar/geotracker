@@ -28,7 +28,7 @@ app.get("/",function(req,res){
     
     
     console.log("YOur IP: ",larr);
-    console.log(geo);
+    // console.log(geo);
     console.log("geo array:",geoarr);
     res.render("index");
 });
