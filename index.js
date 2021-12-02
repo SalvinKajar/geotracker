@@ -35,6 +35,6 @@ app.get("/",function(req,res){
 app.get("/map",function(req,res){
     
     var c={lat:19.0222,lon:72.8561};
-    res.render("map",c);
+    res.render("map",{cdata:c});
 });
 app.listen(process.env.PORT || 5000);
