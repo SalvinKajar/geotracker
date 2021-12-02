@@ -1,7 +1,7 @@
 const express= require("express");
 const RequestIp = require('@supercharge/request-ip');
 const app= express()
-
+var geoip = require('geoip-lite');
 let larr = []
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
@@ -11,7 +11,11 @@ app.get("/",function(req,res){
     console.log("double working");
     const ip = RequestIp.getClientIp(req);
     larr.push(ip);
+    var geo = geoip.lookup(ip);
+    
     console.log("YOur IP: ",larr);
+    console.log(geo);
+
     res.render("index");
 });
 
