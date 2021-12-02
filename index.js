@@ -34,7 +34,12 @@ app.get("/",function(req,res){
 });
 app.get("/map",function(req,res){
     
-    var c={lat:19.0222,lon:72.8561};
+    var c={lat:38.913188059745586,lon:-77.03238901390978};
+
+    if(geoarr.length>0)
+    {
+        c={lat:geoarr[geoarr.length-1].lat,lon:geoarr[geoarr.length-1].lon}
+    }
     res.render("map",{cdata:c});
 });
 app.listen(process.env.PORT || 5000);
